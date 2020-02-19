@@ -1,0 +1,51 @@
+﻿@model OnilneFlightBooking.Entity.UserEntity
+
+@{
+    ViewBag.Title = "SignUp";
+}
+
+<h2>SignUp</h2>
+@using (Html.BeginForm("SignUp", "adduser", FormMethod.Post))
+{
+<table >
+    <tr style="border-spacing:10px">
+        <td>Name</td>
+        <td>@Html.TextBoxFor(model => model.name)</td>
+    </tr>
+    <tr>
+        <td>Mobile</td>
+        <td>@Html.TextBoxFor(model => model.mobile)</td>
+    </tr>
+    <tr>
+        <td>DoB</td>
+        <td>@Html.TextBoxFor(model => model.dob)</td>
+        +
+    </tr>
+    <tr>
+        <td>Mail</td>
+        <td>@Html.TextBoxFor(model => model.mail)</td>
+    </tr>
+    <tr>
+        <td>Sex</td>
+        <td>@Html.EnumDropDownListFor(model => model.sex)</td>
+    </tr>
+    <tr>
+        <td>User Address</td>
+        <td>@Html.TextBoxFor(model => model.userAddress)</td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td>@Html.TextBoxFor(model => model.password)</td>
+    </tr>
+    <tr>
+        <td>Role</td>
+        <td>@Html.RadioButtonFor(model => model.role,"admin")admin @Html.RadioButtonFor(model => model.role,"user")user</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" runat="server" />
+        </td>
+    </tr>
+</table>
+}
+

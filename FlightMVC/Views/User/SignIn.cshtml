@@ -1,0 +1,24 @@
+﻿@model OnilneFlightBooking.Entity.UserEntity
+
+@{
+    ViewBag.Title = "SignIn";
+}
+
+<h2>SignIn</h2>
+<table>
+    <tr>
+        <td>Mobile Number</td>
+        <td>@Html.EditorFor(model => model.mobile)</td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td>@Html.EditorFor(model => model.password)</td>
+    </tr>
+</table>
+<a>
+    <input type='button' value='Login' />
+</a>
+
+<a  href='@Url.Action("SignUp", "User")'>
+    <input type='button' value='Register' />
+</a>
