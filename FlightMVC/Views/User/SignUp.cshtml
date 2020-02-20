@@ -5,45 +5,75 @@
 }
 
 <h2>SignUp</h2>
-@using (Html.BeginForm("SignUp", "adduser", FormMethod.Post))
+@using (Html.BeginForm("SignUp", "User", FormMethod.Post))
 {
-<table >
+
+<table>
+    @Html.ValidationSummary(true)
     <tr style="border-spacing:10px">
         <td>Name</td>
-        <td>@Html.TextBoxFor(model => model.name)</td>
+        <td>
+            @Html.TextBoxFor(model => model.Name)
+            @Html.ValidationMessageFor(Model => Model.Name, "", new { style = "display:hidden;color:red" })
+        </td>
     </tr>
     <tr>
         <td>Mobile</td>
-        <td>@Html.TextBoxFor(model => model.mobile)</td>
+        <td>
+            @Html.TextBoxFor(model => model.Mobile)
+            @Html.ValidationMessageFor(Model => Model.Mobile)
+        </td>
     </tr>
     <tr>
         <td>DoB</td>
-        <td>@Html.TextBoxFor(model => model.dob)</td>
-        +
+        <td>@Html.TextBoxFor(model => model.Dob)</td>
+
+        @*<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+            @section script{
+                    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+                <script>
+                    $(function () {
+                        $(".UserRepository").UserRepository();
+                    });
+                </script>
+                }*@
     </tr>
     <tr>
         <td>Mail</td>
-        <td>@Html.TextBoxFor(model => model.mail)</td>
+        <td>
+            @Html.TextBoxFor(model => model.Mail)
+            @Html.ValidationMessageFor(model => model.Mail)
+        </td>
+
     </tr>
     <tr>
         <td>Sex</td>
-        <td>@Html.EnumDropDownListFor(model => model.sex)</td>
+        <td>
+            @Html.EnumDropDownListFor(model => model.Sex)
+            @Html.ValidationMessageFor(Model => Model.Sex)
+        </td>
     </tr>
     <tr>
         <td>User Address</td>
-        <td>@Html.TextBoxFor(model => model.userAddress)</td>
+        <td>@Html.TextBoxFor(model => model.UserAddress)</td>
     </tr>
     <tr>
         <td>Password</td>
-        <td>@Html.TextBoxFor(model => model.password)</td>
+        <td>
+            @Html.TextBoxFor(model => model.Password)
+            @Html.ValidationMessageFor(Model => Model.Password)
+        </td>
     </tr>
     <tr>
-        <td>Role</td>
-        <td>@Html.RadioButtonFor(model => model.role,"admin")admin @Html.RadioButtonFor(model => model.role,"user")user</td>
+        <td>Conform Password</td>
+        <td>
+            @Html.TextBoxFor(model => model.ConfirmPassword)
+            @Html.ValidationMessageFor(Model => Model.ConfirmPassword)
+        </td>
     </tr>
     <tr>
         <td>
-            <input type="submit" runat="server" />
+            <input type="submit" id="register" value="Register"/>
         </td>
     </tr>
 </table>

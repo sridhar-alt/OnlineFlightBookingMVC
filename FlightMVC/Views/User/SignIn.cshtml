@@ -4,21 +4,26 @@
     ViewBag.Title = "SignIn";
 }
 
+
+@if (TempData["message"] != null)
+{
+    @Html.Label((string)TempData["message"])
+}
 <h2>SignIn</h2>
 <table>
     <tr>
         <td>Mobile Number</td>
-        <td>@Html.EditorFor(model => model.mobile)</td>
+        <td>@Html.EditorFor(model => model.Mobile)</td>
     </tr>
     <tr>
         <td>Password</td>
-        <td>@Html.EditorFor(model => model.password)</td>
+        <td>@Html.EditorFor(model => model.Password)</td>
     </tr>
 </table>
 <a>
     <input type='button' value='Login' />
 </a>
 
-<a  href='@Url.Action("SignUp", "User")'>
+<a href='@Url.Action("SignUp", "User")'>
     <input type='button' value='Register' />
 </a>
