@@ -150,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FlightController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -176,6 +177,9 @@
     <Content Include="Views\User\SignIn.cshtml" />
     <Content Include="Views\Shared\_LayoutPage1.cshtml" />
     <Content Include="Views\Home\Main.cshtml" />
+    <Content Include="Views\User\UserDisplay.cshtml" />
+    <Content Include="Views\Flight\Displayflight.cshtml" />
+    <Content Include="Views\Shared\_DisplayFlight.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

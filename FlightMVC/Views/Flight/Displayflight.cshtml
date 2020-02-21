@@ -1,0 +1,10 @@
+﻿@model System.Data.DataTable
+@{
+    ViewBag.Title = "Displayflight";
+}
+
+<h2>Displayflight</h2>
+@foreach(System.Data.DataRow row in Model.Rows)
+{
+    @Html.Partial("_DisplayFlight",row)
+}

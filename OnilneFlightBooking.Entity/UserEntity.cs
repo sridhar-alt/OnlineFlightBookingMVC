@@ -13,18 +13,26 @@ namespace OnilneFlightBooking.Entity
     public class UserEntity
     {
         [Required(ErrorMessage = "Name required")]
+        [StringLength(30, ErrorMessage = "Name cannot be longer than 30 characters.")]
+        [RegularExpression(@"(^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$)", ErrorMessage = "Invalid Name")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Phone number required")]
+
+        [MaxLength(10)]
         [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^([0-9]{10})$", ErrorMessage = "Enter the numeric digits.")]
         public string Mobile { get; set; }
-        [Required(ErrorMessage = "DAte Requried")]
+        [Required(ErrorMessage ="Date of Birth required")]
+        [DataType(DataType.Date, ErrorMessage = "(dd/mm/yyyy) is Required Format")]
         public DateTime Dob { get; set; }
-        [Required(ErrorMessage = "Mail required")]
+        [Required(ErrorMessage = "The email address is required")]
+        [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string Mail { get; set; }
 
         [Required(ErrorMessage = "Gender required")]
         public sex Sex { get; set; }
-
+        [Required]
+        [StringLength(50, ErrorMessage = "Name cannot be longer than 30 characters.")]
         public string UserAddress { get; set; }
 
         [Required]
@@ -37,7 +45,7 @@ namespace OnilneFlightBooking.Entity
         [Compare("Password", ErrorMessage = "Password and Confirm password must be same")]
         public string ConfirmPassword { get; set; }
 
-        public string Role;
+        public string Role { get; set; }
 
         public UserEntity()
         { }
@@ -51,7 +59,11 @@ namespace OnilneFlightBooking.Entity
             Sex = sex;
             UserAddress = userAddress;
             Password = password;
-            Role = "user";
+        }
+        public UserEntity(string mobile,string password)
+        {
+            Mobile = mobile;
+            Password = password;
         }
     }
     

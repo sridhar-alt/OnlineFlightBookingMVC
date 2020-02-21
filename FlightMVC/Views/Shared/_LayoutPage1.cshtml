@@ -6,10 +6,11 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
-        <div>
-            @Html.ActionLink("SignUp", "SignUp", "User")
-            @Html.ActionLink("SignaIn", "SignIn", "User")
-            @RenderBody()
-        </div>
+    <div>
+        @Html.ActionLink("SignUp", "SignUp", "User")
+        @Html.ActionLink("SignaIn", "SignIn", "User")
+        @Html.ActionLink("DisplayFlight","DisplayFlight","Flight")
+        @RenderBody()
+    </div>
 </body>
 </html>

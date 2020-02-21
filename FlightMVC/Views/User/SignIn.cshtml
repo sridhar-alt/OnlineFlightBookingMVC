@@ -10,20 +10,23 @@
     @Html.Label((string)TempData["message"])
 }
 <h2>SignIn</h2>
-<table>
-    <tr>
-        <td>Mobile Number</td>
-        <td>@Html.EditorFor(model => model.Mobile)</td>
-    </tr>
-    <tr>
-        <td>Password</td>
-        <td>@Html.EditorFor(model => model.Password)</td>
-    </tr>
-</table>
-<a>
-    <input type='button' value='Login' />
-</a>
+@using (Html.BeginForm("SignIn", "User", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Mobile Number</td>
+            <td>@Html.TextBox("Mobile")</td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>@Html.TextBox("Password")</td>
+        </tr>
+    </table>
+    <a>
+        <input type='submit' value='Login' />
+    </a>
 
-<a href='@Url.Action("SignUp", "User")'>
-    <input type='button' value='Register' />
-</a>
+    <a href='@Url.Action("SignUp", "User")'>
+        <input type='button' value='Register' />
+    </a>
+}
