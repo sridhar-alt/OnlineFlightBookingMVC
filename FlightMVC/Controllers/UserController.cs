@@ -1,6 +1,7 @@
 ﻿using OnilneFlightBooking.Entity;
 using System.Web.Mvc;
 using OnlineFlightbooking.DAL;
+using System.Collections.Generic;
 
 namespace FlightMVC.Controllers
 {
@@ -14,6 +15,7 @@ namespace FlightMVC.Controllers
         [HttpGet]
         public ActionResult SignUp()
         {
+            IEnumerable<UserEntity> con = UserRepository.RegisterUser();
             return View();
         }
         [HttpPost]

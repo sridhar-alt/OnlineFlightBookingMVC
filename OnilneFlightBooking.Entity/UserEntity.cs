@@ -16,8 +16,9 @@ namespace OnilneFlightBooking.Entity
         [StringLength(30, ErrorMessage = "Name cannot be longer than 30 characters.")]
         [RegularExpression(@"(^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$)", ErrorMessage = "Invalid Name")]
         public string Name { get; set; }
-        [Required(ErrorMessage = "Phone number required")]
 
+        [Key]
+        [Required(ErrorMessage = "Phone number required")]
         [MaxLength(10)]
         [DataType(DataType.PhoneNumber)]
         [RegularExpression(@"^([0-9]{10})$", ErrorMessage = "Enter the numeric digits.")]

@@ -1,14 +1,22 @@
 ﻿using OnilneFlightBooking.Entity;
+using OnlineFlightbooking.DIL;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace OnlineFlightbooking.DAL
 {
     public class UserRepository
     {
         static string connectionString = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
+
+        public static List<UserEntity>RegisterUser()
+        {
+            UserContext userContext = new UserContext();
+            return userContext.UserEntity.ToList();
+        }
         public static Int16 ValidateLogin(UserEntity user)
         {
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
