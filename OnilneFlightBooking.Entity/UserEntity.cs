@@ -61,11 +61,6 @@ namespace OnilneFlightBooking.Entity
             UserAddress = userAddress;
             Password = password;
         }
-        public UserEntity(string mobile,string password)
-        {
-            Mobile = mobile;
-            Password = password;
-        }
     }
     
 }

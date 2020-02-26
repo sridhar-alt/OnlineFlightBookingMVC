@@ -1,4 +1,4 @@
-﻿using OnlineFlightbooking.DIL;
+﻿using OnlineFlightbooking.DAL;
 using System;
 using System.Collections.Generic;
 using System.Data;

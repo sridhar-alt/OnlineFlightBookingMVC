@@ -5,6 +5,7 @@
 }
 
 <h2>SignUp</h2>
+<h2>@ViewBag.message</h2>
 @using (Html.BeginForm("SignUp", "User", FormMethod.Post))
 {
 
@@ -29,16 +30,6 @@
             @Html.TextBoxFor(model => model.Dob)
             @Html.ValidationMessageFor(Model => Model.Dob, "", new { style = "display:hidden;color:red" })
         </td>
-
-        @*<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
-            @section script{
-                    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
-                <script>
-                    $(function () {
-                        $(".UserRepository").UserRepository();
-                    });
-                </script>
-                }*@
     </tr>
     <tr>
         <td>Mail Address</td>
