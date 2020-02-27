@@ -7,8 +7,7 @@ namespace OnilneFlightBooking.Entity
     public enum sex
     {
         male,
-        female,
-        others
+        female
     }
     public class UserEntity
     {

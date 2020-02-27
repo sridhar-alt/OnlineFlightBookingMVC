@@ -1,4 +1,5 @@
-﻿using OnlineFlightbooking.DAL;
+﻿using OnilneFlightBooking.Entity;
+using OnlineFlightbooking.DAL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,8 +18,8 @@ namespace FlightMVC.Controllers
         }
         public ActionResult Displayflight()
         {
-            DataTable dataTable = FlightRepository.ViewFlightDetails();
-            return View(dataTable);
+            IEnumerable<FlightEntity> con = FlightRepository.ViewFlightDetails();
+            return View();
         }
     }
 }

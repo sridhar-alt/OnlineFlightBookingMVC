@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FlightContext.cs" />
     <Compile Include="FlightRepository.cs" />
     <Compile Include="UserContext.cs" />
     <Compile Include="UserRepository.cs" />

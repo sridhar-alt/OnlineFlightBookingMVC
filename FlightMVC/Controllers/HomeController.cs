@@ -11,7 +11,9 @@ namespace FlightMVC.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            throw new Exception();
+
+           // return View();
         }
         public ActionResult Main()
         {

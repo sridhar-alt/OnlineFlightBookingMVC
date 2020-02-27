@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightMVC", "FlightMVC\FlightMVC.csproj", "{C0FB2A36-CDE2-4DB3-820E-CD31C8038F51}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineFlightBooking", "FlightMVC\OnlineFlightBooking.csproj", "{C0FB2A36-CDE2-4DB3-820E-CD31C8038F51}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineFlightbooking.DAL", "OnlineFlightbooking.DIL\OnlineFlightbooking.DAL.csproj", "{3C8205DB-FD79-4F1E-9BC2-5094A923339E}"
 EndProject

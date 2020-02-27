@@ -9,7 +9,6 @@ namespace FlightMVC.Controllers
     [HandleError]
     public class UserController : Controller
     {
-        [HandleError(View="NullError",ExceptionType =typeof(NullReferenceException))]
         public ActionResult Index()
         {
             return View();
@@ -18,8 +17,18 @@ namespace FlightMVC.Controllers
         [HttpGet]
         public ActionResult SignUp()
         {
-            IEnumerable<UserEntity> con = UserRepository.RegisterUser();
-            return View();
+            try
+            {
+                IEnumerable<UserEntity> con = UserRepository.RegisterUser();
+                return View();
+
+            }
+            catch (Exception ex)
+            {
+                return View("Error");
+               
+            }
+           
         }
         [HttpPost]
         public ActionResult SignUp(UserEntity user)
@@ -34,11 +43,13 @@ namespace FlightMVC.Controllers
             return View();
         }
         [HttpGet]
+        [CustomeError]
         public ActionResult SignIn()
         {
             return View();
+            throw new Exception("Error have been occured..");
         }
-        [HttpPost]
+        //[HttpPost]
         //public ActionResult SignIn(FormCollection form)
         //{
         //    if (ModelState.IsValid)

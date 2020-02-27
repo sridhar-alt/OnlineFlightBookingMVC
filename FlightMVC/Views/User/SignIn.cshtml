@@ -5,9 +5,9 @@
 }
 
 
-@if (TempData["message"] != null)
+@if (ViewBag.message != null)
 {
-    @Html.Label((string)TempData["message"])
+    @Html.Label((string)ViewBag.message)
 }
 <h2>SignIn</h2>
 @using (Html.BeginForm("SignIn", "User", FormMethod.Post))

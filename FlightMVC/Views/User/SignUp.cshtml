@@ -42,8 +42,9 @@
     <tr>
         <td>Gender</td>
         <td>
-            @Html.EnumDropDownListFor(model => model.Sex)
-            @Html.ValidationMessageFor(Model => Model.Sex,"",new { style = "display:hidden;color:red" })
+            @Html.RadioButtonFor(model => model.Sex, "male")Male
+            @Html.RadioButtonFor(model => model.Sex, "female")Female
+            @Html.ValidationMessageFor(Model => Model.Sex, "", new { style = "display:hidden;color:red" })
         </td>
     </tr>
     <tr>
